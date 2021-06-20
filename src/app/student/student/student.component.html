@@ -1,0 +1,111 @@
+<h3>student</h3>
+<button (click)="showAdd()">{{btnaddtitle}}</button>
+<!-- <button (click)="showedit() ">{{editbtn}}</button> -->
+<div *ngIf="newflag ">
+    <h1>Adding Student</h1>
+    <input type="text" [(ngModel)]="newstudent.id" placeholder="id">
+    <input type="text" [(ngModel)]="newstudent.name" placeholder="name">
+    <input type="text" [(ngModel)]="newstudent.img" placeholder="img">
+    <input type="text" [(ngModel)]="newstudent.age" placeholder="age">
+    <button (click)="AddStudent()">Save</button>
+</div>
+
+<div class="container border-1 ">
+    <div class="row px-3">
+        <div class="card text-center col-lg-4 md-4" *ngFor="let item of student ; let i=index ;  ">
+            <div class="card-header">
+                <div class="col lg-6 md-6">{{item.name}}</div>
+            </div>
+            <div class="card-body">
+                <img id="myimg" src="{{item.img}}" width="200" height="200">
+            </div>
+            <div class="card-footer text-muted">
+                <div class="col lg-6 md-6">
+                    <button (click)="Details(item.id) ">View</button>
+                    <!-- <button (click)="showedit() " (click)="EditStd(item.id)">{{editbtn}}</button> -->
+                    <!-- <button (click)="EditStd(item.id)">{{editbtn}}</button> -->
+                    <!-- <button (click)="EditStd(item.id)">Edit</button> -->
+                    <button (click)="showedit() ">{{editbtn}}</button>
+                    <button class="del" (click)="DeleteStd(item.id) "> Delete </button>
+
+                    <div *ngIf="savebtnflag"><button (click)="EditStd(item.id)">Save</button></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="editflag">
+    <h1>editing Student</h1>
+    <input type="text" [(ngModel)]="stdedit.name" placeholder="name">
+    <input type="text" [(ngModel)]="stdedit.img" placeholder="img">
+    <input type="text" [(ngModel)]="stdedit.age" placeholder="age">
+
+
+</div>
+<div class="col-lg-12" *ngIf="detailsflag ">
+    id={{stdData.id}} name={{stdData.name}} img={{stdData.img}} age={{stdData.age}}
+</div>
+
+
+<hr>
+<hr>
+<h3>student 2</h3>
+<button (click)="showAdd()">{{btnaddtitle}}</button>
+<div *ngIf="newflag ">
+    <h1>Adding Student</h1>
+    <input type="text" [(ngModel)]="newstudent.id" placeholder="id">
+    <input type="text" [(ngModel)]="newstudent.name" placeholder="name">
+    <input type="text" [(ngModel)]="newstudent.img" placeholder="img">
+    <input type="text" [(ngModel)]="newstudent.age" placeholder="age">
+    <button (click)="AddStudent()">Save</button>
+</div>
+
+<div class="container border-1 ">
+
+    <div class="row px-3 ">
+
+
+        <div class="col lg-4 md-4">#</div>
+        <div class="col lg-4 md-4">Id</div>
+        <div class="col lg-4 md-4">Name</div>
+        <div class="col lg-4 md-4">img</div>
+        <div class="col lg-4 md-4">age</div>
+        <div class="col lg-4 md-4">Operation </div>
+
+
+    </div>
+    <div class="row p-3" *ngFor="let item of student ; let i=index ;  ">
+        <div class="col lg-4 md-4 ">{{i+1}}</div>
+        <div class="col lg-4 md-4 ">{{item.id}}</div>
+        <div class="col lg-4 md-4 ">{{item.name}}</div>
+        <div class="col lg-4 md-4 "> <img id="myimg" src="{{item.img}}" width="150" height="150"></div>
+        <div class="col lg-4 md-4 "> {{item.age}}</div>
+        <div class="col lg-6 md-6">
+
+            <button (click)="Details(item.id) ">View</button>
+            <!-- <button (click)="showedit() " (click)="EditStd(item.id)">{{editbtn}}</button> -->
+            <!-- <button (click)="EditStd(item.id)">{{editbtn}}</button> -->
+            <!-- <button (click)="EditStd(item.id)">Edit</button> -->
+            <button (click)="showedit() ">{{editbtn}}</button>
+            <button class="del" (click)="DeleteStd(item.id) "> Delete </button>
+
+            <div *ngIf="savebtnflag"><button (click)="EditStd(item.id)">Save</button></div>
+        </div>
+
+    </div>
+</div>
+
+<div *ngIf="editflag">
+    <h1>editing Student</h1>
+
+    <input type="text" [(ngModel)]="stdedit.name" placeholder="name">
+    <input type="text" [(ngModel)]="stdedit.img" placeholder="img">
+    <input type="text" [(ngModel)]="stdedit.age" placeholder="age">
+
+
+</div>
+<div *ngIf="detailsflag ">
+    id={{stdData.id}} name={{stdData.name}} img={{stdData.img}} age={{stdData.age}}
+</div>

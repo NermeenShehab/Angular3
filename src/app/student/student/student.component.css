@@ -1,0 +1,14 @@
+.row {
+    border: 2px solid;
+}
+
+button {
+    padding: 5px;
+    margin: 5px;
+    background-color: blue;
+    color: white;
+}
+
+.del {
+    background-color: red;
+}
